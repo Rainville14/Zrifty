@@ -1,0 +1,33 @@
+{
+  "name": "zrifty",
+  "version": "1.0.0",
+  "description": "Zrifty Sale Site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "server": "webpack-dev-server --mode development"
+  },
+  "author": "Matthew D Rainville",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
+    "resolve-url-loader": "^2.3.0",
+    "sass-loader": "^7.0.1",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "gridly": "^1.4.12",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  }
+}
