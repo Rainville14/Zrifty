@@ -1,0 +1,5 @@
+export default {
+	API_CALL: 'API_CALL',
+	API_FETCHING: 'API_FETCHING',
+	API_FETCHED: 'API_FETCHED'
+};
