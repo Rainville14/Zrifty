@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Header from 'components/Header/Header';
 
 
 class Layout extends React.Component {
@@ -9,11 +10,14 @@ class Layout extends React.Component {
 	render() {
 
 		return (
-			<div>
-				<div className="container">
-					{this.props.children}
+			<React.Fragment>
+				<Header />
+				<div>
+					<div className="container">
+						{this.props.children}
+					</div>
 				</div>
-			</div>
+			</React.Fragment>
 		);
 	}
 }
