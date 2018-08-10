@@ -14,6 +14,7 @@ import createHistory from 'history/createBrowserHistory';
 import {ConnectedRouter, routerReducer} from 'react-router-redux';
 
 import Base from 'controllers/base';
+import Utilities from 'controllers/utilities';
 
 import Layout from 'views/Layout';
 
@@ -31,7 +32,8 @@ import 'gridly/dist/gridly.min';
 import 'styles/global.scss';
 
 const Routes = [
-	...Base
+	...Base,
+	...Utilities
 ];
 
 const createClientStore = (state, rootReducer, history) => {

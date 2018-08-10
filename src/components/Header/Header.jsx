@@ -5,7 +5,7 @@ class Header extends React.Component {
 		return (
 			<header className="row">
 				<div className="col logo">
-					Zrifty
+					RainSplat
 				</div>
 				<nav className="col">
 					<ul>

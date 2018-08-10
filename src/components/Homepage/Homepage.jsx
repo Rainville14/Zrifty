@@ -1,11 +1,12 @@
 import React from 'react';
+import Column from 'components/common/layout/column';
 
 class Homepage extends React.Component {
 	render() {
 		return (
-			<span className="col">
+			<Column>
 				This is Zrifty Homepage
-			</span>
+			</Column>
 		)
 	}
 };

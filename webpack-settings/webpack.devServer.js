@@ -1,14 +1,17 @@
+const BUILD = require('../build.js');
+
 module.exports = function(options) {
 	const port = 3000;
 	let devServer = {
 		contentBase: './public',
+		public: 'local.rainsplat.com',
 		port: port,
 		https: true,
 		historyApiFallback: {
             rewrites: [
                 {
                     from: /./,
-                    to: 'built/app/entry.html'
+                    to: 'public/index.html'
                 }
             ]
         }
