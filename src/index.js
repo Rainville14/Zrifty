@@ -67,7 +67,6 @@ if (document.getElementById('app')) {
 								path={route.path}
 								component={route.component}
 								exact={route.exact}
-								authorize={route.authorize}
 							/>
 						)}
 					</Layout>

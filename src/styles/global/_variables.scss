@@ -1,10 +1,23 @@
 // Branding
 $brand_primary_font: Arial, Helvetica, sans-serif;
-$brand_primary_color: rgb(40, 40, 194);
+$brand_primary_color: rgb(155, 0, 0);
 
 // Buttons
 $button_primary_bg_color: $brand_primary_color;
+$button_primary_color: #FFF;
+$button_border_radius: 4px;
+$button_padding: 8px 12px;
+$button_font_size: 12px;
 
 // Header
 $header_bg_color: $brand_primary_color;
 $header_font_color: #FFF;
+
+// Nav
+$nav_link_color: #AAA;
+
+// Forms
+$input_padding: 8px;
+$input_border: 1px solid #BBB;
+$input_border_radius: 0;
+$input_bg_color: #FFF;

@@ -1,18 +1,17 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import Nav from 'components/Header/Nav';
 
 class Header extends React.Component {
 	render() {
 		return (
 			<header className="row">
-				<div className="col logo">
-					RainSplat
+				<div className="header--inner">
+					<Link to="/" className="col logo">
+						RainSplat
+					</Link>
+					<Nav />
 				</div>
-				<nav className="col">
-					<ul>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Browse</a></li>
-					</ul>
-				</nav>
 			</header>
 		)
 	}

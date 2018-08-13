@@ -1,5 +1,12 @@
 header {
 	background-color: $header_bg_color;
 	color: $header_font_color;
-	padding: 10px 0;
+	padding: 15px 0;
+
+	.header--inner {
+		display: flex;
+		width: 100%;
+		max-width: 1024px;
+		margin: 0 auto;
+	}
 }
