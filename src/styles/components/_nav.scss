@@ -1,0 +1,11 @@
+nav {
+	display: flex;
+	flex: 0 0 50%;
+
+	a {
+		font-size: 14px;
+		font-weight: bold;
+		color: $nav_link_color;
+		padding: 0 10px;
+	}
+}

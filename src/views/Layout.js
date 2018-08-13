@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Header from 'components/Header/Header';
+import Row from 'components/common/layout/row';
 
 
 class Layout extends React.Component {
@@ -9,11 +11,12 @@ class Layout extends React.Component {
 	render() {
 
 		return (
-			<div>
-				<div className="container">
+			<React.Fragment>
+				<Header />
+				<main>
 					{this.props.children}
-				</div>
-			</div>
+				</main>
+			</React.Fragment>
 		);
 	}
 }
