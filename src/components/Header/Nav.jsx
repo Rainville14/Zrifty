@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Row from 'components/common/layout/Row';
-import Column from 'components/common/layout/Column';
+import Row from 'components/common/layout/row';
+import Column from 'components/common/layout/column';
 
 class Nav extends React.Component {
 	render() {
