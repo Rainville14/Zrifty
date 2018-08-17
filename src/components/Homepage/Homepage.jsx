@@ -1,14 +1,28 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import Column from 'components/common/layout/column';
 
 class Homepage extends React.Component {
 	render() {
+		const {
+			siteName
+		} = this.props;
+
 		return (
 			<Column>
-				This is Zrifty Homepage
+				{`This is ${siteName} Homepage`}
 			</Column>
 		)
 	}
 };
+const mapStateToProps = (state, {form}) => {
+	return {
+		siteName: state.config.formattedSite
+	};
+};
 
-export default Homepage;
+const mapDispatchToProps = {
+
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
