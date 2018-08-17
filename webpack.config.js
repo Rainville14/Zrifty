@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const IS_MOCK_SERVER = true;
 
 const devServer = require('./webpack-settings/webpack.devServer')({
@@ -64,6 +65,14 @@ module.exports = {
 		]
 	},
 	plugins: [
+		new HtmlWebpackPlugin({
+			template: 'src/views/index.html',
+			title: 'Zrifty',
+			minify: true,
+			hash: true,
+			cache: true,
+			xhtml: true
+		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].css',
 			chunkFilename: '[id].css'

@@ -1,14 +1,29 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import Row from 'components/common/layout/row';
 
 class Portfolio extends React.Component {
 	render() {
+		const {
+			siteName
+		} = this.props;
+
 		return (
 			<Row>
-				This is the RainSplat Portfolio
+				{`This is the ${siteName} Portfolio`}
 			</Row>
 		)
 	}
 };
 
-export default Portfolio;
+const mapStateToProps = (state, {form}) => {
+	return {
+		siteName: state.config.formattedSite
+	};
+};
+
+const mapDispatchToProps = {
+
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Portfolio);
