@@ -5,12 +5,11 @@ module.exports = function(options) {
 	const port = 3000;
 	let devServer = {
 		contentBase: path.join(__dirname, '../public'),
-		public: 'local.rainsplat.com',
 		disableHostCheck: true,
 		port: port,
 		https: true,
 		inline: true,
-		open: true,
+		open: false,
 		historyApiFallback: {
             rewrites: [
                 {

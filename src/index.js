@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import merge from 'deepmerge';
 import {Provider} from 'react-redux';
 import {reducer as formReducer} from 'redux-form';
 import {
@@ -8,28 +9,36 @@ import {
 	createStore,
 	combineReducers
 } from 'redux';
+import logger from 'redux-logger';
 
 import {Route, Switch} from 'react-router';
 import createHistory from 'history/createBrowserHistory';
 import {ConnectedRouter, routerReducer} from 'react-router-redux';
+
+import baseSiteConfig from 'configs/sites/base';
 
 import Base from 'controllers/base';
 import Utilities from 'controllers/utilities';
 
 import Layout from 'views/Layout';
 
-const rootReducer = combineReducers({
-	form: formReducer,
-	routing: routerReducer
-});
-
 import thunk from 'redux-thunk';
 import {routerMiddleware} from 'react-router-redux';
+
+import configReducer from 'reducers/ConfigReducer';
 
 import apiMiddleware from 'middleware/apiMiddleware';
 
 import 'gridly/dist/gridly.min';
 import 'styles/global.scss';
+
+const rootReducer = combineReducers({
+	form: formReducer,
+	routing: routerReducer,
+	config: configReducer(baseSiteConfig)
+});
+
+console.log('ROOT REDUCER: ' + rootReducer)
 
 const Routes = [
 	...Base,
@@ -38,15 +47,15 @@ const Routes = [
 
 const createClientStore = (state, rootReducer, history) => {
 	if (!process.env.DEVTOOLS) {
-		return createStore(rootReducer, state,
+		return createStore(rootReducer, state, applyMiddleware(logger),
 			compose(applyMiddleware(thunk, apiMiddleware, routerMiddleware(history)))
 		);
 	} else {
 		const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-		const logger = require('redux-logger');
+		//const logger = require('redux-logger');
 
-		return createStore(rootReducer, state,
-			composeEnhancers(applyMiddleware(thunk, apiMiddleware, routerMiddleware(history), logger()))
+		return createStore(rootReducer, state, applyMiddleware(logger),
+			composeEnhancers(applyMiddleware(thunk, apiMiddleware, routerMiddleware(history)))
 		);
 	}
 };
