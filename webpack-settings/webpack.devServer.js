@@ -7,6 +7,7 @@ module.exports = function(options) {
 		contentBase: path.join(__dirname, '../public'),
 		disableHostCheck: true,
 		port: port,
+		host: 'localhost',
 		https: true,
 		inline: true,
 		open: false,
