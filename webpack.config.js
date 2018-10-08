@@ -16,8 +16,9 @@ module.exports = {
 	},
 
 	output: {
-		path: path.resolve('./public'),
+		path: path.resolve('./public/built'),
 		filename: '[name].js',
+		chunkFilename: '[name].bundle.js',
 		publicPath: '/'
 	},
 	module: {
@@ -78,6 +79,18 @@ module.exports = {
 			chunkFilename: '[id].css'
 		})
 	],
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				commons: {
+					test: /node_modules\/(.*)\.(js)$/,
+					chunks: 'all',
+					name: 'vendor',
+					enforce: true
+				}
+			}
+		}
+	},
 	resolve: {
 		modules: [
 			path.resolve('./src/'),
