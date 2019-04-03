@@ -1,2 +1,4 @@
 node_modules/*
 public/built/*
+
+./package-lock.json
